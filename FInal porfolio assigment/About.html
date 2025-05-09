@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vaibhavi Joshi Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo"><a href="Home.html">VAIBHAVI JOSHI</a></div>
+    <nav class="main-nav">
+      <a href="Work.html" class="nav-link">WORK</a>
+      <!-- <a href="#" class="nav-link">APPROACH</a> -->
+      <a href="About.html" class="nav-link">ME</a>
+      <a href="Contact.html" class="nav-link">CONTACT</a>
+  </nav>
+  </header>
+
+  <section class="about">
+    <h1>I’m not just a designer, I’m a user first! I craft designs I’d be excited to use myself. 💪🏻</h1>
+    <p class="description">
+      Every pixel, every interaction I create is something I’d be thrilled to experience myself. I don’t just think about how things should look; I dive deep into how they feel and function. If it doesn’t spark joy or make me want to click ‘just one more time,’ it’s back to the drawing board. My designs aren’t just about aesthetics they’re built with real people in mind (starting with me!).
+      <br><br>
+      <a class="highlight-link" href="#">If I wouldn’t use it, why should anyone else?</a>
+    </p>
+
+    <h2>Work? Check. Now let’s get to the fun bits!</h2>
+    <p class="description">
+      I thrive on the <span class="blue-text">joy of spending time with family and friends</span>, but my heart races for the untamed wonders of nature. There’s something electric about wildlife adventures, especially when it comes to the thrill of spotting a tiger in the wild. The anticipation, the quiet hush, and then, when that majestic creature appears, everything else fades away your camera, your thoughts it’s pure magic in the moment. It’s a feeling that can't be captured, only experienced. That adrenaline rush? 
+      <span class="purple-link">It’s what keeps me going back for more, always chasing that wild encounter.</span>
+    </p>
+    <p class="description">
+      I’m a serious foodie, especially when sweets are involved. 
+      <span class="purple-link">Tiramisu or anything with a dash of coffee?</span> That’s a guaranteed way to win my heart every time!
+    </p>
+
+    <a class="view-resume" href="#">View Resume ↗</a>
+  </section>
+
+  <section class="life-outside">
+    <p class="life-intro">Life outside the Instagram grid (Scroll or drag ⟶ )</p>
+    
+    <div class="life-carousel">
+        <div>
+            <img src="1.png" alt="Life Image 1" class="carousel-img">
+        </div>
+        <div>
+            <img src="2.png" alt="Life Image 2" class="carousel-img">
+        </div>
+        <div>
+            <img src="3.png" alt="Life Image 3" class="carousel-img">
+        </div>
+        <div>
+            <img src="4.png" alt="Life Image 4" class="carousel-img">
+        </div>
+        <div>
+            <img src="5.png" alt="Life Image 5" class="carousel-img">
+        </div>
+        <div>
+            <img src="6.png" alt="Life Image 6" class="carousel-img">
+        </div>
+        <div>
+          <img src="7.png" alt="Life Image 7" class="carousel-img">
+      </div>
+      <div>
+        <img src="8.png" alt="Life Image 8" class="carousel-img">
+    </div>
+    <div>
+      <img src="9.png" alt="Life Image 9" class="carousel-img">
+  </div>
+  <div>
+    <img src="10.png" alt="Life Image 10" class="carousel-img">
+</div>
+<div>
+  <img src="11.png" alt="Life Image 11" class="carousel-img">
+</div>
+<div>
+  <img src="12.png" alt="Life Image 12" class="carousel-img">
+</div>
+<div>
+  <img src="13.png" alt="Life Image 13" class="carousel-img">
+</div>
+<div>
+  <img src="14.png" alt="Life Image 14" class="carousel-img">
+</div>
+    </div>
+</section>
+
+
+
+  <footer class="footer">
+    <nav>
+      <a href="Home.html">home</a>
+      <a href="About.html">about me</a>
+      <a href="#">projects</a>
+      <a href="#">say hi</a>
+    </nav>
+    <div class="social">
+      <a href="#">in</a>
+      <a href="#">Bē</a>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('.intro-nav a').click(function(e) {
+        e.preventDefault(); 
+        
+       
+        $('.intro-nav a').removeClass('active');
+        
+        $(this).addClass('active');
+        
+        const clickedText = $(this).text();
+        
+        
+        let newHeading = '';
+        switch(clickedText) {
+            case 'For anyone':
+                newHeading = "Hey! I'm Vaibhavi, a curious-minded product designer who loves solving tricky problems, usually with a coffee in hand. 😊";
+                break;
+            case 'Recruiters':
+                newHeading = "Hello Recruiters! I'm Vaibhavi, a product designer with experience in creating user-centered digital solutions.";
+                break;
+            case 'Design directors':
+                newHeading = "Greetings Design Directors! I'm Vaibhavi, bringing 3 years of strategic design thinking to complex product challenges.";
+                break;
+            case 'Product designers':
+                newHeading = "Hi fellow Product Designers! I'm Vaibhavi, passionate about creating meaningful user experiences through iterative design.";
+                break;
+        }
+        
+       
+        $('h1').fadeOut(200, function() {
+            $(this).text(newHeading).fadeIn(200);
+        });
+    });
+
+    $('.main-nav .nav-link').on('click', function(e) {
+        console.log('Link clicked'); // Debug log
+        
+        // Remove active class from all links
+        $('.main-nav .nav-link').removeClass('active');
+        
+        // Add active class to clicked link
+        $(this).addClass('active');
+    });
+
+    // Set active class based on current page
+    const currentPage = window.location.pathname.split('/').pop();
+    $('.main-nav .nav-link').each(function() {
+        if ($(this).attr('href') === currentPage) {
+            $(this).addClass('active');
+        }
+    });
+    $('.life-carousel').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            arrows: true,
+            dots: true,
+            infinite: true,
+            centerMode: true,
+            centerPadding: '0px',
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
+        });
+  });
+
+</script>
+
+</body>
+</html>

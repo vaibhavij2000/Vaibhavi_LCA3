@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vaibhavi Joshi Portfolio</title>
+  <link rel="stylesheet" href="home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<header class="navbar">
+		<div class="logo"><a href="Home.html">VAIBHAVI JOSHI</a></div>
+		<nav class="main-nav">
+		  <a href="Work.html" class="nav-link">WORK</a>
+		  <!-- <a href="#" class="nav-link">APPROACH</a> -->
+		  <a href="About.html" class="nav-link">ME</a>
+		  <a href="Contact.html" class="nav-link">CONTACT</a>
+	  </nav>
+	  </header>
+
+  <section class="intro">
+    <div class="intro-text">
+      <div class="intro-nav">
+        <a class="active" href="#">For anyone</a>
+        <a href="#">Recruiters</a>
+        <a href="#">Design directors</a>
+        <a href="#">Product designers</a>
+      </div>
+      <h1>Hey! I’m Vaibhavi, a curious-minded product designer who loves solving tricky problems, usually with a coffee in hand. 😊</h1>
+    </div>
+    <div class="intro-images">
+      <img src="coffee image.jpg" alt="Coffee image" class="img1">
+      <img src="Vaibhavi photo.jpg" alt="Vaibhavi photo" class="img2">
+    </div>
+    <div class="scroll-down">
+      <span>↓</span>
+     
+    </div>
+  </section>
+
+  <section class="fav-work">
+    <h2>Fruits of labour aka fav work</h2>
+    <div class="projects-grid">
+      <div class="project">
+        <img src="Kefi & Co.jpg" alt="Kefi & Co">
+        <h3>Kefi & Co</h3>
+        <p>Adding a fresh twist to classic block prints</p>
+      </div>
+      <div class="project">
+        <img src="Manzuri.jpg" alt="Manzuri">
+        <h3>Manzuri</h3>
+        <p>Taking the shyness out of sexual wellness</p>
+      </div>
+      <div class="project">
+        <img src="Guppy Moms.jpg" alt="Guppy Moms">
+        <h3>Guppy Moms</h3>
+        <p>Giving a quirky touch to chai masala</p>
+      </div>
+      <div class="project">
+        <img src="Trishveda.jpg" alt="Trishveda">
+        <h3>Trishveda</h3>
+        <p>It’s all about sustainability</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wall-of-wonders">
+    <div class="wall-text">
+      <h2>Wall of Wonders</h2>
+      <p>
+        A peek into my creative playground, this space showcases a mix of ideas and artworks born during the design process. Some made the cut, others didn’t, but each one adds its unique value to my journey of exploration.
+      </p>
+      <p class="scroll-hint">(Scroll or drag ⟶)</p>
+    </div>
+    <div class="wall-images">
+      <img src="ScrollImg.png" alt="Vibe Tribe illustration">
+    </div>
+  </section>
+
+  <footer class="footer">
+    <nav>
+      <a href="Home.html">home</a>
+      <a href="#">about me</a>
+      <a href="#">projects</a>
+      <a href="#">say hi</a>
+    </nav>
+    <div class="social">
+      <a href="#">in</a>
+      <a href="#">Bē</a>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', initPage);
+    
+    function initPage() {
+        const introLinks = document.querySelectorAll('.intro-nav a');
+        const heading = document.querySelector('h1');
+        const mainLinks = document.querySelectorAll('.main-nav .nav-link');
+    
+        introLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                handleIntroClick(e, link, introLinks, heading);
+            });
+        });
+    
+        mainLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                handleMainLinkClick(link, mainLinks);
+            });
+        });
+    
+        highlightCurrentMainLink(mainLinks);
+    }
+    
+    function handleIntroClick(event, clickedLink, allLinks, heading) {
+        event.preventDefault();
+        clearActiveClass(allLinks);
+        clickedLink.classList.add('active');
+    
+        const newHeading = getNewHeading(clickedLink.textContent);
+        fadeHeading(heading, newHeading);
+    }
+    
+    function getNewHeading(clickedText) {
+        switch (clickedText) {
+            case 'For anyone':
+                return "Hey! I'm Vaibhavi, a curious-minded product designer who loves solving tricky problems, usually with a coffee in hand. 😊";
+            case 'Recruiters':
+                return "Hello Recruiters! I'm Vaibhavi, a product designer with experience in creating user-centered digital solutions.";
+            case 'Design directors':
+                return "Greetings Design Directors! I'm Vaibhavi, bringing 3 years of strategic design thinking to complex product challenges.";
+            case 'Product designers':
+                return "Hi fellow Product Designers! I'm Vaibhavi, passionate about creating meaningful user experiences through iterative design.";
+            default:
+                return "Hi, I'm Vaibhavi!";
+        }
+    }
+    
+    function fadeHeading(heading, newText) {
+        heading.style.transition = 'opacity 0.2s';
+        heading.style.opacity = 0;
+    
+        setTimeout(function() {
+            heading.textContent = newText;
+            heading.style.opacity = 1;
+        }, 200);
+    }
+    
+    function handleMainLinkClick(clickedLink, allLinks) {
+        console.log('Link clicked');
+        clearActiveClass(allLinks);
+        clickedLink.classList.add('active');
+    }
+    
+    function highlightCurrentMainLink(allLinks) {
+        const currentPage = window.location.pathname.split('/').pop();
+    
+        allLinks.forEach(function(link) {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    function clearActiveClass(links) {
+        links.forEach(function(link) {
+            link.classList.remove('active');
+        });
+    }
+
+    const contactLink = document.createElement('a');
+contactLink.textContent = 'Contact Me';
+contactLink.href = 'contact.html';
+contactLink.classList.add('nav-link');
+
+const mainNav = document.querySelector('.main-nav');
+mainNav.firstElementChild.insertAdjacentElement('beforebegin', contactLink);
+
+document.addEventListener('keydown', function(event) {
+    if (event.key.toLowerCase() === 'c') {
+        window.location.href = 'contact.html';
+    }
+});
+
+
+    </script>
+    
+    
+
+</body>
+</html>
